@@ -5,8 +5,6 @@ const Quotes = () => {
   const [name, setName] = useState('');
   const [quoteAuthorId, setQuoteAuthorId] = useState('');
 
-  //   const authorName = quote.author.split(' ').join('+');
-  //   console.log(quote.author.split(' ').join('+'));
 
   useEffect(() => {
     fetch(`https://www.breakingbadapi.com/api/quote/random`)
@@ -14,12 +12,24 @@ const Quotes = () => {
       .then((data) => {
         setQuote(data[0]);
         setName(data[0].author);
-        console.log(name);
-        return name;
       })
-      .then((name) => console.log(name))
       .catch((error) => console.log(error));
-  }, [name]);
+  }, []);
+
+  
+  const authorName = name
+  // console.log(authorName)
+
+  if (name.length > 0) {
+    fetch(`https://www.breakingbadapi.com/api/characters`)
+    .then(response => response.json())
+    .then(data => {})
+    .catch(error => console.log(error))
+  } 
+
+
+
+  // console.log(name.split(" ").join('+'))
 
   //   const getCharacterId = () => {
   //     console.log(quote.author);
@@ -29,11 +39,12 @@ const Quotes = () => {
   //     // console.log(quote.author);
   //   };
 
-  return (
+  return (    
     <div>
       <h1>Quotes</h1>
       <h2>{quote.quote}</h2>
       <h3>{quote.author}</h3>
+      {/* <p>{quoteAuthorId}</p> */}
     </div>
   );
 };
