@@ -35,11 +35,13 @@ const Characters = () => {
   //   );
   // });
 
-
   const cardsContainer = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: '30px',
+    // padding: '20px',
     // width: '100%',
     // height: '40vw',
     // objectFit: 'cover',
@@ -73,10 +75,7 @@ const Characters = () => {
         <input type="submit" value="Submit" />
       </form>
 
-        <div style={cardsContainer}>
-          {renderCharacter}
-        </div>
-
+      <div style={cardsContainer}>{renderCharacter}</div>
     </div>
   );
 };

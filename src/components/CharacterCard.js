@@ -8,15 +8,19 @@ const CharacterCard = (props) => {
   const imageSize = {
     width: '100%',
     height: '350px',
-    objectFit: 'cover'
+    objectFit: 'cover',
     // height: '40vw',
     // objectFit: 'cover',
+  };
+
+  const cardStyle = {
+    margin: '10px',
   };
 
   return (
     <>
       <Link to={`/characters/${character.char_id}`}>
-        <div className="ui card">
+        <div className="ui card" style={cardStyle}>
           <div className="image">
             <img style={imageSize} src={character.img} />
           </div>
