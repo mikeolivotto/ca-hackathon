@@ -5,6 +5,7 @@ import Episodes from './components/Episodes';
 import Characters from './components/Characters';
 import Quotes from './components/Quotes';
 import CharacterPage from './components/CharacterPage';
+import EpisodePage from './components/EpisodePage';
 
 const App = () => {
   return (
@@ -42,6 +43,9 @@ const App = () => {
           </Route>
           <Route path="/characters/:charId">
             <CharacterPage />
+          </Route>
+          <Route path="/episodes/:episodeId">
+            <EpisodePage />
           </Route>
         </Switch>
       </Router>

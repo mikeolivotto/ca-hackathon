@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Link,
-  useRouteMatch,
-  Switch,
-  Route,
-  useParams,
+  useParams
 } from 'react-router-dom';
 
 const CharacterPage = () => {
@@ -18,8 +14,6 @@ const CharacterPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(character);
-
   const { name, img, occupation, nickname, portrayed } = character;
 
   return (
@@ -28,7 +22,7 @@ const CharacterPage = () => {
       <h2>Occupation: {occupation}</h2>
       <h3>Nickname: {nickname && nickname}</h3>
       <h3>Actor: {portrayed}</h3>
-      <img src={img} />
+      <img src={img} alt={name} />
     </div>
   );
 };
