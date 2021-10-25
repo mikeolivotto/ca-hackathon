@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Episodes from './components/Episodes';
 import Characters from './components/Characters';
 import Quotes from './components/Quotes';
+import CharacterPage from './components/CharacterPage';
 
 const App = () => {
   return (
@@ -38,6 +39,9 @@ const App = () => {
           </Route>
           <Route exact path="/quotes">
             <Quotes />
+          </Route>
+          <Route path="/characters/:charId">
+            <CharacterPage />
           </Route>
         </Switch>
       </Router>
