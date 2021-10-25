@@ -6,9 +6,6 @@ const Characters = () => {
   const [characterList, setCharacterList] = useState([]);
   const [searchString, setSearchString] = useState('');
 
-  const [characterDisplayList, setCharacterDisplayList] =
-    useState(characterList);
-
   useEffect(() => {
     fetch('https://www.breakingbadapi.com/api/characters')
       .then((response) => response.json())
