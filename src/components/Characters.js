@@ -35,6 +35,22 @@ const Characters = () => {
   //   );
   // });
 
+
+  const cardsContainer = {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    // width: '100%',
+    // height: '40vw',
+    // objectFit: 'cover',
+  };
+
+  // const cardsGroup = {
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  //   flexWrap: 'wrap'
+  // }
+
   const renderCharacter = filterCharacter.map((character, index) => {
     return (
       <CharacterCard
@@ -57,7 +73,10 @@ const Characters = () => {
         <input type="submit" value="Submit" />
       </form>
 
-      <ul>{renderCharacter}</ul>
+        <div style={cardsContainer}>
+          {renderCharacter}
+        </div>
+
     </div>
   );
 };

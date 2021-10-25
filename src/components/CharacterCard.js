@@ -6,13 +6,15 @@ const CharacterCard = (props) => {
   // console.log(character);
 
   const imageSize = {
-    // width: '100%',
+    width: '100%',
+    height: '350px',
+    objectFit: 'cover'
     // height: '40vw',
     // objectFit: 'cover',
   };
 
   return (
-    <div>
+    <>
       <Link to={`/characters/${character.char_id}`}>
         <div className="ui card">
           <div className="image">
@@ -34,7 +36,7 @@ const CharacterCard = (props) => {
           </div>
         </div>
       </Link>
-    </div>
+    </>
   );
 };
 
