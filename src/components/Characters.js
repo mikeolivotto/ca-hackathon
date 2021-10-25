@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
+import CharacterCard from './CharacterCard';
 
 const Characters = () => {
   let match = useRouteMatch();
@@ -26,11 +27,21 @@ const Characters = () => {
     return char.name.toLowerCase().includes(searchString.toLowerCase());
   });
 
+  // const renderCharacter = filterCharacter.map((character, index) => {
+  //   return (
+  //     <li key={index}>
+  //       <Link to={`/characters/${character.char_id}`}>{character.name}</Link>
+  //     </li>
+  //   );
+  // });
+
   const renderCharacter = filterCharacter.map((character, index) => {
     return (
-      <li key={index}>
-        <Link to={`/characters/${character.char_id}`}>{character.name}</Link>
-      </li>
+      <CharacterCard
+        key={index}
+        link={`/characters/${character.char_id}`}
+        character={character}
+      />
     );
   });
 
