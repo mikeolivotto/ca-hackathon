@@ -18,11 +18,22 @@ const Quotes = () => {
     getQuote();
   }, []);
 
+  const quoteStyle = {
+    fontSize: '1.7em'
+  }
+
+  const author = {
+    fontSize: '1.2em'
+  }
+
   return (
     <div>
-      <h1>Quotes</h1>
-      <h2>{quote.quote}</h2>
-      <h3>{quote.author}</h3>
+      <h1>Quotes from Breaking Bad</h1>
+      <div className="ui message">
+        <p style={quoteStyle}><i>{quote.quote}</i></p>
+        <p style={author}><b>- {quote.author}</b></p>
+      </div>
+
       <input type="button" onClick={getQuote} value="Get Quote" />
     </div>
   );

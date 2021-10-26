@@ -23,7 +23,7 @@ const Episodes = () => {
 
   return (
     <div>
-      <h1>Episode</h1>
+      <h1>Episode List</h1>
 
       <ul>{renderEpisode}</ul>
     </div>

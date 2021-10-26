@@ -14,15 +14,23 @@ const CharacterPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  const { name, img, occupation, nickname, portrayed } = character;
+  const { name, birthday, img, occupation, nickname, portrayed, appearance, better_call_saul_appearance } = character;
+  console.log(appearance)
+
+
 
   return (
     <div>
       <h1>{name}</h1>
-      <h2>Occupation: {occupation}</h2>
-      <h3>Nickname: {nickname && nickname}</h3>
-      <h3>Actor: {portrayed}</h3>
-      <img src={img} alt={name} />
+      <ul>
+        <li><b>Also known as:</b> {nickname}</li>
+        <li><b>D.O.B.:</b> {birthday}</li>
+        <li><b>Occupation:</b> {occupation && occupation.join(", ")}</li>
+        <li><b>Breaking Bad season(s):</b> {appearance && appearance.join(", ")}</li>
+        <li><b>Better Call Saul season(s): </b>{better_call_saul_appearance && better_call_saul_appearance.join(" , ")}</li>
+        <li><b>Actor:</b> {portrayed}</li>
+      </ul>
+      <img src={img} alt={name} style={{maxHeight: '300px'}} />
     </div>
   );
 };

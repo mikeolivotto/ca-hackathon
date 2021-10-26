@@ -29,11 +29,6 @@ const CharacterCard = (props) => {
             <div className="description">
               <strong>Nickname:</strong> {character.nickname}
             </div>
-            <div className="meta">
-              <span className="date">
-                <strong>D.O.B:</strong> {character.birthday}
-              </span>
-            </div>
             <div className="description">
               <strong>Occupation:</strong> {character.occupation.join(', ')}
             </div>
