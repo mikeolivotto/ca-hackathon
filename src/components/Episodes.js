@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Episodes = () => {
-  let match = useRouteMatch();
+  // let match = useRouteMatch();
   const [episodeList, setEpisodeList] = useState([]);
 
   useEffect(() => {
@@ -16,13 +16,13 @@ const Episodes = () => {
   const renderEpisode = episodeList.map((episode, index) => {
     return (
       <li key={index}>
-        <Link to={`/episodes/${episode.episode_id}`}>Season {episode.season}, Episode {episode.episode}: {episode.title}</Link>
+        <Link to={`/episodes/${episode.episode_id}`}>{episode.series} - Season {episode.season}, Episode {episode.episode}: {episode.title}</Link>
       </li>
     );
   });
 
   return (
-    <div>
+    <div className="ui container">
       <h1>Episode List</h1>
 
       <ul>{renderEpisode}</ul>

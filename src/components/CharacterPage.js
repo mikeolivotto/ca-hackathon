@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  useParams
+  useParams, Link
 } from 'react-router-dom';
 
 const CharacterPage = () => {
@@ -12,15 +12,12 @@ const CharacterPage = () => {
       .then((response) => response.json())
       .then((body) => setCharacter(body[0]))
       .catch((error) => console.log(error));
-  }, []);
+  }, [charId]);
 
   const { name, birthday, img, occupation, nickname, portrayed, appearance, better_call_saul_appearance } = character;
-  console.log(appearance)
-
-
 
   return (
-    <div>
+    <div  className="ui container">
       <h1>{name}</h1>
       <ul>
         <li><b>Also known as:</b> {nickname}</li>
@@ -31,7 +28,13 @@ const CharacterPage = () => {
         <li><b>Actor:</b> {portrayed}</li>
       </ul>
       <img src={img} alt={name} style={{maxHeight: '300px'}} />
+      <p>
+        <Link to="/characters">
+            {`<<`} Back to all characters
+        </Link>
+      </p>
     </div>
+
   );
 };
 
