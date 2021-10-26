@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Quotes = () => {
+  document.title = "Quotes - Broken Bad"
   const [quote, setQuote] = useState('');
 
   const getQuote = () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  document.title = "Broken Bad"
   const bbGreen = {
     color: 'rgb(72, 127, 90)'
   }

@@ -6,16 +6,17 @@ import {
 const CharacterPage = () => {
   let { charId } = useParams();
   const [character, setCharacter] = useState({});
-
+  
   useEffect(() => {
     fetch(`https://www.breakingbadapi.com/api/characters/${charId}`)
       .then((response) => response.json())
       .then((body) => setCharacter(body[0]))
       .catch((error) => console.log(error));
-  }, [charId]);
+    }, [charId]);
 
-  const { name, birthday, img, occupation, nickname, portrayed, appearance, better_call_saul_appearance } = character;
-
+    const { name, birthday, img, occupation, nickname, portrayed, appearance, better_call_saul_appearance } = character;
+    
+    document.title = `${name} - Broken Bad`
   return (
     <div  className="ui container">
       <h1>{name}</h1>

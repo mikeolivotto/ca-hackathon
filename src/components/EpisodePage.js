@@ -15,7 +15,7 @@ const EpisodePage = () => {
 
 
   const { title, season, episode, air_date, characters, series } = epi;
-
+  document.title = `S${season}E${episode}: ${title} - Broken Bad`
 
   // const renderCharacters = characters.map((character, index) => {
   //   return(

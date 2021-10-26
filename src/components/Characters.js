@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import CharacterCard from "./CharacterCard";
 
 const Characters = () => {
+
+  document.title = "Characters - Broken Bad"
+
   const [characterList, setCharacterList] = useState([]);
   const [searchString, setSearchString] = useState("");
 
