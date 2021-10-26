@@ -16,7 +16,7 @@ const Episodes = () => {
   const renderEpisode = episodeList.map((episode, index) => {
     return (
       <li key={index}>
-        <Link to={`/episodes/${episode.episode_id}`}>{episode.series} - Season {episode.season}, Episode {episode.episode}: {episode.title}</Link>
+        <Link to={`/episodes/${episode.episode_id}`}>{`${episode.series} - S${episode.season}E${episode.episode}: ${episode.title}`}</Link>
       </li>
     );
   });
