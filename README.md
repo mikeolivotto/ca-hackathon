@@ -1,6 +1,6 @@
 # A React-based app for everything Breaking Bad
 
-by Ahmet Erturk & Mike Olivotto
+by [Ahmet Erturk](https://github.com/ahmetterturk) & [Mike Olivotto](https://github.com/mikeolivotto)
 
 [Deployed Application Link](https://broken-bad.netlify.app/)
 
